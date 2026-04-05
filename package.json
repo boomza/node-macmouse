@@ -26,7 +26,7 @@
     "test": "node -e \"require('./macmouse.js'); console.log('Module loaded successfully');\""
   },
   "dependencies": {
-    "ffi": "^2.4.0",
+    "ffi": "^2.3.0",
     "nodobjc": "2.1.0"
   },
   "license": "MIT"
