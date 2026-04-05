@@ -22,6 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
+    - name: Install build dependencies
+      run: brew install libffi pkg-config
+    
     - name: Install dependencies
       run: npm install --legacy-peer-deps
     
