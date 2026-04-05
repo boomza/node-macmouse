@@ -25,11 +25,12 @@ jobs:
     - name: Install build dependencies
       run: brew install libffi pkg-config
     
-    - name: Set PKG_CONFIG_PATH
-      run: echo "PKG_CONFIG_PATH=/usr/local/opt/libffi/lib/pkgconfig" >> $GITHUB_ENV
-    
     - name: Install dependencies
       run: npm install --legacy-peer-deps
+      env:
+        PKG_CONFIG_PATH: /opt/homebrew/opt/libffi/lib/pkgconfig
+        LDFLAGS: -L/opt/homebrew/opt/libffi/lib
+        CPPFLAGS: -I/opt/homebrew/opt/libffi/include
     
     - name: Run tests
       run: npm test
